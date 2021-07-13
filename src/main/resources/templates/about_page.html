@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/main.css}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" type="text/css"/>
+    <title>About</title>
+
+</head>
+<body>
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">×</a>
+    <a th:href="@{/}">Home</a>
+    <a th:href="@{/viewIssuesPage}">Issues</a>
+    <a th:href="@{/equipment}">Equipment</a>
+    <a th:href="@{/viewAboutPage}">About Us</a>
+    <span sec:authorize="isAuthenticated()"><a th:href="@{logout}">Logout</a> </span>
+</div>
+
+
+<div id="main">
+    <header>
+        <div class="menu-opener">
+            <button class="open-btn" onclick="openNav()">☰ </button><span>About Page</span>
+        </div>
+        <div class="user-name">
+            <span>Welcome <span sec:authentication="principal.username"> </span></span>
+        </div>
+    </header>
+
+
+    <div id="contents">
+        <div id="developer-details">
+        <span> SIN:&emsp;&emsp;&emsp;&emsp;&emsp; 18126934</span> <br>
+        <span> Full Names:&emsp;&emsp;Banda Obed</span> <br>
+        <span> Full Names:&emsp;&emsp;Bachelor of Science in Computer Science</span> <br>
+
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript" th:src="@{/js/main.js}"></script>
+</body>
+</html>

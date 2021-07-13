@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <!--    <link th:href="@{/css/main.css}" rel="stylesheet">-->
+    <title>Equipment management System</title>
+
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" type="text/css"/>
+
+</head>
+<body>
+
+
+<div class="container">
+    <h1>Equipment Management System</h1>
+    <hr>
+    <h2>Update Equipment</h2>
+
+    <form action="#" th:action="@{/saveEquipment}" th:object="${equipment}" method="POST">
+
+        <input type="text" th:file="*{id}" class="form-control mb-4 col-lg-12" readonly/>
+
+        <input type="text" th:field="*{name}" class="form-control mb-4 col4"/>
+
+        <textarea rows="5" cols="20" th:field="*{description}" class="form-control mb-4 col-lg-12"></textarea>
+
+        <button type="submit">Update</button>
+        <input type="reset" id="reset_button" value="Cancel">
+    </form>
+    <br>
+    <a th:href="@{/equipment}">Back to Equipment Page</a>
+
+
+</div>
+</body>
+</html>

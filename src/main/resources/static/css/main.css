@@ -1,0 +1,178 @@
+body {
+    background-color: #ffffff;
+    font-family: Arial;
+}
+
+/*where the side bar design starts*/
+
+/* The sidebar menu */
+.sidebar {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #09a51b;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 160px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+}
+
+/* The sidebar links */
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+    color: #f6962d;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .close-btn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.open-btn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #09a51b;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.open-btn:hover {
+    background-color: #444;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s; /* If you want a transition effect */
+    /*padding: 20px;*/
+
+}
+
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+}
+
+/*End of the side menu design*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+
+header {
+    background-color: #09a51b;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+}
+
+
+#title_of_page{
+    float: left;
+    margin-left: 10px;
+}
+
+#logged_in{
+    float: right;
+}
+
+
+.menu-opener{
+    float: left;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.user-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    font-weight: bold;
+    height: 50px;
+    color: #ffffff;
+    padding: 10px;
+    background-color: #f6962d;
+}
+
+
+#contents {
+    width: 85%;
+    margin: auto;
+    padding-top: 60px;
+}
+
+#front_page_image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+
+#welcome {
+    border: 2px solid cornflowerblue;
+    background-color: #d4d4d1;
+    color: cornflowerblue;
+    width: 70%;
+    text-align: center;
+    font-size: 25px;
+    padding: 30px;
+    margin: auto;
+}
+
+
+
+/*--------------Issues Page Design---------------*/
+#add-issue {
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+}
+#save-button {
+    background-color: #09a51b;
+    margin: 20px;
+}
+#reset_button{
+    background-color: #f6962d;
+    margin: 20px;
+}
+
+#available-issues {
+    width: 80%;
+}
+
+/*-------------------Equipment page design--------------*/
+
+.equipment-form{
+    text-align: center;
+}
+
+
+
+/*-----------------About Page Design------------------*/
+#developer-details {
+    padding-top: 150px;
+}
+#developer-details>span {
+    margin-top: 150px;
+}
+
+

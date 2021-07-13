@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/main.css}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" type="text/css"/>
+    <title>Equipment Manager</title>
+
+</head>
+<body>
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">×</a>
+    <a th:href="@{/}">Home</a>
+    <a th:href="@{/viewIssuesPage}">Issues</a>
+    <a th:href="@{/equipment}">Equipment</a>
+    <a th:href="@{/viewAboutPage}">About Us</a>
+    <span sec:authorize="isAuthenticated()"><a th:href="@{logout}">Logout</a> </span>
+</div>
+
+
+<div id="main">
+    <header>
+        <div class="menu-opener">
+            <button class="open-btn" onclick="openNav()">☰ </button><span>Issues Page</span>
+        </div>
+        <div class="user-name">
+            <span>Welcome <span sec:authentication="principal.username"> </span></span>
+        </div>
+    </header>
+
+
+    <div id="contents">
+        <div id="add-issue" class="container">
+            <h3 style="text-align: center">Add Issue</h3>
+                <form action="#" th:action="@{/saveIssues}" th:object="${issues}" method="post">
+                    <select th:field="*{equipment}" class="form-control" required>
+                        <option th:each="equipment : ${listEquipment}"
+                                th:value="${equipment.name}"
+                                th:text="${equipment.name}">
+                        </option>
+                    </select>
+
+                    <textarea rows="5" placeholder="Enter description here" th:field="*{description}" class="form-control" required/>
+
+                    <input type="text" placeholder="Enter Location here" th:field="*{location}" class="form-control" required/>
+                    <button class="btn" id="save-button" type="submit">Save</button>
+                    <input class="btn" type="reset" id="reset_button" value="Cancel">
+                </form>
+            </div>
+
+            <br>
+
+            <div class="container" id="available-issues" align="center">
+                <h3>Available Issues</h3>
+
+                <table border="1" class="table table-striped table-responsive-md">
+                    <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Equipment</th>
+                        <th>Description</th>
+                        <th>Location</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="issues : ${listIssues}">
+                        <td th:text="${issues.id}"></td>
+                        <td th:text="${issues.equipment}"></td>
+                        <td th:text="${issues.description}"></td>
+                        <td th:text="${issues.location}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" th:src="@{/js/main.js}"></script>
+</body>
+</html>
